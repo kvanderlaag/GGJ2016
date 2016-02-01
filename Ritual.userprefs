@@ -1,0 +1,22 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CatcherScript.cs">
+    <Files>
+      <File FileName="Assets\GameController.cs" Line="27" Column="22" />
+      <File FileName="Assets\PulseControllerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\TrackController.cs" Line="1" Column="1" />
+      <File FileName="Assets\CatcherScript.cs" Line="159" Column="5" />
+      <File FileName="Assets\TracksTestScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SongController.cs" Line="1" Column="1" />
+      <File FileName="Assets\NoteController.cs" Line="1" Column="1" />
+      <File FileName="Assets\IndicatorCollisionScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\CaptureParticleScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\OVR\Scripts\OVRCameraRig.cs" Line="1" Column="1" />
+      <File FileName="Assets\ScoreController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
