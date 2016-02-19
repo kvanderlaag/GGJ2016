@@ -9,6 +9,8 @@ public class TrackController : MonoBehaviour {
 
 	int divisionsSinceStart = 0;
 
+    int currentMeasure = 0;
+
 	public enum TrackType {
 		Drum,
 		Drum2,
@@ -34,9 +36,12 @@ public class TrackController : MonoBehaviour {
 
 	public int divisionsDisabled = 0;
 
-	public Transform XSpawn, YSpawn, BSpawn;
+	public Transform XSpawn, YSpawn, BSpawn, MarkerSpawn;
 	public GameObject XNote, YNote, BNote;
 	public GameObject trackPlane;
+
+    public GameObject barMarker;
+    public GameObject beatMarker;
 
 	public Material drumMat, bassMat, synthMat, padMat;
 	public AudioClip drumClip, drum2Clip, bassClip, synthClip, padClip;
@@ -79,6 +84,10 @@ public class TrackController : MonoBehaviour {
 			} else if (t.gameObject.name == "BSpawn") {
 				BSpawn = t;
 			}
+            else if (t.gameObject.name == "MarkerSpawn")
+            {
+                MarkerSpawn = t;
+            }
 		}
 		init = true;
 	}
@@ -98,6 +107,19 @@ public class TrackController : MonoBehaviour {
 					trackPlane.GetComponent<MeshRenderer> ().enabled = true;
 				}
 			} else {
+                if (divisionsSinceStart % 32 == 0)
+                {
+                    currentMeasure++;
+                    GameObject newBarMarker = Instantiate(barMarker, MarkerSpawn.transform.position, MarkerSpawn.transform.rotation) as GameObject;
+                    newBarMarker.transform.parent = transform;
+                    newBarMarker.GetComponent<MarkerScript>().setMeasure(currentMeasure);
+                }
+                else if (divisionsSinceStart % 8 == 0)
+                {
+                    GameObject newBeatMarker = Instantiate(beatMarker, MarkerSpawn.transform.position, MarkerSpawn.transform.rotation) as GameObject;
+                    newBeatMarker.transform.parent = transform;
+                    newBeatMarker.GetComponent<MarkerScript>().setMeasure(currentMeasure);
+                }
 				switch (sequence [noteIndex++]) {
 				case Notes.X:
 					GameObject xNote = Instantiate (XNote, XSpawn.position, Quaternion.identity) as GameObject;
@@ -178,7 +200,8 @@ public class TrackController : MonoBehaviour {
 		trackPlane.GetComponent<MeshRenderer> ().enabled = false;
 		Transform[] transforms = GetComponentsInChildren<Transform> ();
 		foreach (Transform t in transforms) {
-			if (t.gameObject.name == "XNote(Clone)" || t.gameObject.name == "YNote(Clone)" || t.gameObject.name == "BNote(Clone)")
+			if (t.gameObject.name == "XNote(Clone)" || t.gameObject.name == "YNote(Clone)" || t.gameObject.name == "BNote(Clone)" ||
+                t.gameObject.name == "BarMarker(Clone)" || t.gameObject.name == "BeatMarker(Clone)")
 				Destroy (t.gameObject);
 		}
 		divisionsDisabled = 32 * bars + (32 - divisionsSinceStart % 32);

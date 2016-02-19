@@ -6,6 +6,9 @@ public class CatcherScript : MonoBehaviour {
 	public PulseControllerScript PulseController;
 	public GameController gameController;
 
+    public int currentMeasure = -4;
+    int divisions = 0;
+
 	public int maxEnergy;
 	public int energyPerNote;
 	int energy;
@@ -14,7 +17,7 @@ public class CatcherScript : MonoBehaviour {
 	public GameObject ParticlePrefab;
 	public AudioSource streakSource;
 
-	GameObject currentTrack;
+	public GameObject currentTrack;
 
 	MeshRenderer[] streakBar = new MeshRenderer[7];
 	MeshRenderer[] energyBar = new MeshRenderer[8];
@@ -83,6 +86,12 @@ public class CatcherScript : MonoBehaviour {
 	void FixedUpdate() {
 		if (!gameController.started)
 			return;
+        if (++divisions % 32 == 0)
+        {
+            divisions = 0;
+            currentMeasure++;
+        }
+
 		if (onStreak) {
 			streakDivisions++;
 			if (streakDivisions / 16 > streak) {

@@ -4,6 +4,7 @@ using System.Collections;
 public class PulseControllerScript : MonoBehaviour {
 
 	SongController songController;
+   
 
 	public float tempo;
 	public float maxScale = 2.4f;

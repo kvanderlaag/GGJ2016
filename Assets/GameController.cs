@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour {
 			started = true;
 		}	
 		if (Input.GetButtonDown ("Quit")) {
-			Debug.Log ("Quit");
+			//Debug.Log ("Quit");
 			Application.Quit();
 		}
 	}

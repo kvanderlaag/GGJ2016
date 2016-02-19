@@ -19,3 +19,5 @@ C:\Users\Keegan\Documents\Unity Projects\Ritual\Temp\bin\Debug\UnityEngine.Netwo
 C:\Users\Keegan\Documents\Unity Projects\Ritual\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Keegan\Documents\Unity Projects\Ritual\obj\Debug\Assembly-CSharp.dll
 C:\Users\Keegan\Documents\Unity Projects\Ritual\obj\Debug\Assembly-CSharp.pdb
+D:\Users\kvand_000\Documents\GitHub\GGJ2016\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Users\kvand_000\Documents\GitHub\GGJ2016\obj\Debug\Assembly-CSharp.dll

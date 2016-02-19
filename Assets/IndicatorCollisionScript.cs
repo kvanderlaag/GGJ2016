@@ -14,7 +14,7 @@ public class IndicatorCollisionScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		Debug.Log (other.gameObject.name + " : " + other.gameObject.transform.position.z);
+		//Debug.Log (other.gameObject.name + " : " + other.gameObject.transform.position.z);
 		transform.parent.GetComponent<CatcherScript> ().CollisionEnter (other.gameObject);
 	}
 
